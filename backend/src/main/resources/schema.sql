@@ -20,7 +20,7 @@ CREATE TABLE `country` (
                            `id` bigint NOT NULL AUTO_INCREMENT,
                            `name` varchar(255) NOT NULL,
                            PRIMARY KEY (`id`),
-                           UNIQUE KEY `UK_name` (`name`)
+                           UNIQUE KEY `UK_c_name` (`name`)
 );
 
 CREATE TABLE `genre` (
@@ -33,7 +33,7 @@ CREATE TABLE `title_type` (
                               `id` bigint NOT NULL AUTO_INCREMENT,
                               `name` varchar(255) NOT NULL,
                               PRIMARY KEY (`id`),
-                              UNIQUE KEY `UK_name` (`name`)
+                              UNIQUE KEY `UK_tt_name` (`name`)
 );
 
 CREATE TABLE `covid_report` (
@@ -45,7 +45,6 @@ CREATE TABLE `covid_report` (
                                 `new_deaths` int NOT NULL,
                                 `country_id` bigint DEFAULT NULL,
                                 PRIMARY KEY (`id`),
-                                KEY `FK_country_id` (`country_id`),
                                 CONSTRAINT `FK_country_id` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)
 );
 
@@ -61,7 +60,6 @@ CREATE TABLE `movie` (
                          `title_id` varchar(255) NOT NULL,
                          `title_type_id` bigint DEFAULT NULL,
                          PRIMARY KEY (`id`),
-                         KEY `FK_title_type_id` (`title_type_id`),
                          CONSTRAINT `FK_title_type_id` FOREIGN KEY (`title_type_id`) REFERENCES `title_type` (`id`)
 );
 
@@ -69,7 +67,6 @@ CREATE TABLE `movie_genre` (
                                `movie_id` bigint NOT NULL,
                                `genre_id` bigint NOT NULL,
                                PRIMARY KEY (`movie_id`,`genre_id`),
-                               KEY `FK_genre_id` (`genre_id`),
                                CONSTRAINT `FK_genre_id` FOREIGN KEY (`genre_id`) REFERENCES `genre` (`id`),
                                CONSTRAINT `FK_movie_id` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`)
 );
@@ -80,4 +77,3 @@ CREATE TABLE `movie_premiere_month_count` (
                                               `date` date DEFAULT NULL,
                                               PRIMARY KEY (`id`)
 );
-
