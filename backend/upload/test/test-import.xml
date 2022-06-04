@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<covidReport>
+    <report>
+        <date>07-12-2022</date>
+        <newCases>9876</newCases>
+        <cumulativeCases>9876</cumulativeCases>
+        <newDeaths>9876</newDeaths>
+        <cumulativeDeaths>9876</cumulativeDeaths>
+        <country>
+            <id>1</id>
+            <name>Albania</name>
+        </country>
+    </report>
+    <report>
+        <date>08-12-2022</date>
+        <newCases>6789</newCases>
+        <cumulativeCases>6789</cumulativeCases>
+        <newDeaths>6789</newDeaths>
+        <cumulativeDeaths>6789</cumulativeDeaths>
+        <country>
+            <id>1</id>
+            <name>Angola</name>
+        </country>
+    </report>
+</covidReport>
